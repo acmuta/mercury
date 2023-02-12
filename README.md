@@ -2,7 +2,7 @@
 The open-source browser extension for MyMav, the dashboard for UTA students.
 
 ## License
-Licensed under the MIT license ([./LICENSE] or http://opensource.org/licenses/MIT).
+Licensed under the MIT license ([LICENSE](./LICENSE) or http://opensource.org/licenses/MIT).
 
 ### Contribution
 

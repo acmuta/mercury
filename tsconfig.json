@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./src",
+		"esModuleInterop": true,
+		"declaration": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "commonjs",
+		"outDir": "dist/",
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es2017"
+	},
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"**/__tests__/*"
+	]
+}

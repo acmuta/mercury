@@ -1,0 +1,6 @@
+node_modules
+coverage
+docs/typedocs
+dist
+.history
+.idea

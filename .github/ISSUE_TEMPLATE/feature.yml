@@ -1,9 +1,0 @@
-name: Feature request
-description: Suggest an idea for the project
-title: "Feature: <title>"
-labels: [c-feature, p0-unknown]
-body:
-  - type: textarea
-    attributes:
-      label: Describe the feature
-      description: 

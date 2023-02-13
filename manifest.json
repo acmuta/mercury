@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Project Mercury",
+    "description": "Extension for UTA students that extends and fixes MyMav",
+    "version": "0.0.1",
+    "action": {
+      "default_popup": "hello.html",
+      "default_icon": "mercury.png"
+    }
+  }

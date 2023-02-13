@@ -1,0 +1,63 @@
+{
+	"name": "@{library-author}/{library-name}",
+	"version": "0.0.0",
+	"description": "{description}",
+	"license": "MIT",
+	"author": {
+		"name": "Samantha",
+		"url": "https://github.com/{library-author}"
+	},
+	"keywords": [
+		"typescript"
+	],
+	"bugs": "https://github.com/{library-author}/{library-name}/issues",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/{library-author}/{library-name}.git"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://github.com/sponsors/{library-author}"
+	},
+	"main": "./dist/bundle.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"build": "webpack --color",
+		"build:typedoc": "npx typedoc",
+		"build:typedoc-watch": "npm run build:typedoc -- --watch",
+		"build:all": "npm run build && npm run build:typedoc",
+		"clean": "rm -rf ./dist/ ./docs/typedocs/",
+		"deploy": "gh-pages -d ./docs/typedocs",
+		"test": "vitest --coverage",
+		"test:ci": "npm run test -- run",
+		"test:ui": "npm run test -- --ui",
+		"test:all": "npm run test:ci && npm run lint",
+		"lint": "eslint src --ext .ts,.tsx",
+		"lint:fix": "npm run lint -- --fix",
+		"prepare": "npm run build",
+		"prepublishOnly": "npm run test:all",
+		"preversion": "npm run lint",
+		"version": "npm run lint && git add -A src",
+		"postversion": "git push && git push --tags"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "5.44.0",
+		"@typescript-eslint/parser": "5.44.0",
+		"@vitest/coverage-c8": "^0.25.3",
+		"@vitest/ui": "^0.25.3",
+		"eslint": "8.28.0",
+		"gh-pages": "4.0.0",
+		"ts-loader": "9.4.1",
+		"typedoc": "0.23.21",
+		"typescript": "4.9.3",
+		"vitest": "^0.25.3",
+		"webpack": "5.75.0",
+		"webpack-cli": "5.0.0"
+	}
+}

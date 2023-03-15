@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import { Scheduler } from "@aldabil/react-scheduler";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Scheduler
+        view="month"
+        events={[
+          {
+            event_id: 1,
+            title: "Event 1",
+            start: new Date("2023/3/15 09:30"),
+            end: new Date("2023/3/15 10:30"),
+          },
+        ]}
+      />
     </div>
   );
 }

@@ -1,0 +1,31 @@
+{
+	"name": "Mercury - UTA MyMav",
+	"description": "Improving the UTA student scheduling experience by providing a more intuitive and user-friendly interface for MyMav scheduling.",
+	"version": "0.0.1",
+	"manifest_version": 3,
+	"icons": {
+		"16": "logo/logo16.png",
+		"48": "logo/logo48.png",
+		"128": "logo/logo128.png",
+		"256": "logo/logo256.png",
+		"512": "logo/logo512.png"
+	},
+	"options_page": "settings/settings.html",
+	"action": {
+		"default_popup": "popup/index.html",
+		"default_title": "Open Mercury - UTA MyMav Scheduling Assistant"
+	},
+	"permissions": ["tabs"],
+	"host_permissions": ["*://*/*"],
+	// "background": {
+	// 	"service_worker": "service-worker.js"
+	// },
+	"content_scripts": [
+		{
+			"js": ["foreground.js"],
+      "css": ["foreground.css"],
+			// "matches": ["*://*/*"]
+			"matches": ["https://mymav.utshare.utsystem.edu/psc/ARCSPRD/EMPLOYEE/SA/c/NUI_FRAMEWORK.PT_AGSTARTPAGE_NUI.GBL?CONTEXTIDPARAMS=TEMPLATE_ID%3aPTPPNAVCOL&scname=UTA_MANAGE_CLASSES*"]
+		}
+	]
+}

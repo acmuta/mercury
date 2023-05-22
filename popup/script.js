@@ -12,21 +12,25 @@ async function getCurrentTab() {
 getCurrentTab().then((tab) => {
 	console.log(tab.url);
 	const url = tab.url;
-	if (url.includes("mymav.utshare.utsystem.edu") && url.includes("TEMPLATE_ID%3aPTPPNAVCOL") && url.includes("UTA_MANAGE_CLASSES")) {
+	if (
+		url.includes("mymav.utshare.utsystem.edu") &&
+		url.includes("TEMPLATE_ID%3aPTPPNAVCOL") &&
+		url.includes("UTA_MANAGE_CLASSES")
+	) {
 		collectCourseButton.disabled = false;
+	} else {
+		collectCourseButton.disabled = true;
 
-		document.getElementsByTagName("body")[0].insertAdjacentHTML("beforebegin", 
-		`<button id="gotoCourses">Open MyMav</button>`
-		);
+		document
+			.getElementsByTagName("body")[0]
+			.insertAdjacentHTML("beforebegin", `<button id="gotoCourses">Open MyMav</button>`);
 
 		const gotoCourses = document.getElementById("gotoCourses");
-		const mymavCoursesURL = "https://mymav.utshare.utsystem.edu/psc/ARCSPRD/EMPLOYEE/SA/c/NUI_FRAMEWORK.PT_AGSTARTPAGE_NUI.GBL?CONTEXTIDPARAMS=TEMPLATE_ID%3aPTPPNAVCOL&scname=UTA_MANAGE_CLASSES&PanelCollapsible=Y&PTPPB_GROUPLET_ID=UTA_MANAGE_CLASSES&CRefName=ADMN_NAVCOLL_6";
+		const mymavCoursesURL =
+			"https://mymav.utshare.utsystem.edu/psc/ARCSPRD/EMPLOYEE/SA/c/NUI_FRAMEWORK.PT_AGSTARTPAGE_NUI.GBL?CONTEXTIDPARAMS=TEMPLATE_ID%3aPTPPNAVCOL&scname=UTA_MANAGE_CLASSES&PanelCollapsible=Y&PTPPB_GROUPLET_ID=UTA_MANAGE_CLASSES&CRefName=ADMN_NAVCOLL_6";
 		gotoCourses.addEventListener("click", function (e) {
 			chrome.tabs.create({ url: mymavCoursesURL });
 		});
-
-	} else {
-		collectCourseButton.disabled = true;
 	}
 });
 

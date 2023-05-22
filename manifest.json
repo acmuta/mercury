@@ -23,7 +23,6 @@
 	"content_scripts": [
 		{
 			"js": ["foreground.js"],
-      "css": ["foreground.css"],
 			// "matches": ["*://*/*"]
 			"matches": ["https://mymav.utshare.utsystem.edu/psc/ARCSPRD/EMPLOYEE/SA/c/NUI_FRAMEWORK.PT_AGSTARTPAGE_NUI.GBL?CONTEXTIDPARAMS=TEMPLATE_ID%3aPTPPNAVCOL&scname=UTA_MANAGE_CLASSES*"]
 		}
